@@ -6,16 +6,16 @@ const sendGridEmail = async (data) => {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
   try {
     const msg = {
-      from: 'jorne@jsjj.be',
+      from: 'from email',
       template_id: process.env.SENDGRID_TEMPLATE_ID,
       personalizations: [
         {
           to: [
             {
-              email: 'jorne@jsjj.be',
+              email: data.email,
             },
             {
-              email: data.email,
+              email: '2th email',
             },
           ],
           dynamic_template_data: {

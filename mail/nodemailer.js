@@ -17,16 +17,16 @@ let transporter = nodemailer.createTransport({
   },
 });
 
-const sendEmail = async (content) => {
+const sendEmail = async (data) => {
   try {
     let info = await transporter.sendMail({
-      from: `${content.email}`,
-      to: 'jorne@jsjj.be',
+      from: `${data.email}`,
+      to: 'to email',
       subject: 'Message from webform',
       html: `
-      <h1>Hello ${content.name}</h1>
-      <p>${content.message}</p>
-      <p>email: ${content.email}</p>
+      <h1>Hello ${data.name}</h1>
+      <p>${data.message}</p>
+      <p>email: ${data.email}</p>
       <hr/>
       `,
     });

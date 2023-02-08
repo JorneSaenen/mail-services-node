@@ -13,7 +13,7 @@ app.post('/mail', async (req, res) => {
       email,
       message,
     };
-    //await sendEmail({ name, email, message });
+    await sendEmail(data);
     await sendGridEmail(data);
     res.status(201).json({
       status: 'success',
