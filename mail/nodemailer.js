@@ -22,7 +22,7 @@ const sendEmail = async (data) => {
     let info = await transporter.sendMail({
       from: `${data.email}`,
       to: 'to email',
-      subject: 'Message from webform',
+      subject: data.subject,
       html: `
       <h1>Hello ${data.name}</h1>
       <p>${data.message}</p>
